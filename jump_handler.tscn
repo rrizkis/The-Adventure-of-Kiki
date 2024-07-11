@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ce6xsrhjeg6rc"]
+
+[ext_resource type="AudioStream" uid="uid://didke81xu4ydt" path="res://music/Koi no Plan..mp3" id="1_f28bq"]
+[ext_resource type="Script" path="res://AudioStreamPlayer2D.gd" id="2_nco70"]
+
+[node name="Jump_Handler" type="Node2D"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_f28bq")
+bus = &"Sfx"
+script = ExtResource("2_nco70")
