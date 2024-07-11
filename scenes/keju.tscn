@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://bnp3g5gushlud"]
+
+[ext_resource type="Script" path="res://scenes/keju.gd" id="1_kbfpx"]
+[ext_resource type="Texture2D" uid="uid://b3gbuou8phdp3" path="res://assets/keju.png" id="1_p8y6r"]
+[ext_resource type="Texture2D" uid="uid://cd7snbsk5apfu" path="res://assets/keju1.png" id="2_bid7q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3gju"]
+atlas = ExtResource("1_p8y6r")
+region = Rect2(0, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ru1h"]
+atlas = ExtResource("2_bid7q")
+region = Rect2(0, 0, 500, 500)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ex6r8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3gju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ru1h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n0i4b"]
+size = Vector2(36, 26)
+
+[node name="keju" type="Area2D"]
+script = ExtResource("1_kbfpx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(31.75, 32)
+scale = Vector2(0.129, 0.128)
+sprite_frames = SubResource("SpriteFrames_ex6r8")
+autoplay = "default"
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(32, 31)
+shape = SubResource("RectangleShape2D_n0i4b")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

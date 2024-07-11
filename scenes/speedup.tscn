@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://g5rxj0a18ile"]
+
+[ext_resource type="Texture2D" uid="uid://b8ulga4p2l8ot" path="res://assets/PanahSpeed1.png" id="1_4xcqm"]
+[ext_resource type="Script" path="res://scenes/speedup.gd" id="1_o2t5o"]
+[ext_resource type="Texture2D" uid="uid://dadoqsmcq84p" path="res://assets/PanahSpeed2.png" id="2_wx7g3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ha5g4"]
+size = Vector2(20, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8qtd7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4xcqm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_wx7g3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="speedup" type="Area2D"]
+script = ExtResource("1_o2t5o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(32, 31)
+shape = SubResource("RectangleShape2D_ha5g4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(32, 32)
+scale = Vector2(0.125, 0.125)
+sprite_frames = SubResource("SpriteFrames_8qtd7")
+autoplay = "default"
+frame_progress = 0.275961
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://d33quduwbvldj"]
+
+[ext_resource type="Script" path="res://scenes/pintu.gd" id="1_jrkdo"]
+[ext_resource type="Texture2D" uid="uid://crps0o1neghic" path="res://assets/pintu.png" id="1_u1f6b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_88122"]
+size = Vector2(42, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5rt11"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_u1f6b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="pintu" type="Area2D"]
+script = ExtResource("1_jrkdo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_88122")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(32, 31.75)
+scale = Vector2(0.128, 0.129)
+sprite_frames = SubResource("SpriteFrames_5rt11")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

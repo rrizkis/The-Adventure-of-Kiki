@@ -1,0 +1,84 @@
+[gd_scene load_steps=8 format=3 uid="uid://bvta3pft72w7k"]
+
+[ext_resource type="Texture2D" uid="uid://bg73dcxiia4ii" path="res://assets/WhatsApp_Image_2024-05-20_at_16.39.07-removebg-preview.png" id="1_lq6cn"]
+[ext_resource type="Texture2D" uid="uid://c6j2n4rvtu3bj" path="res://assets/WhatsApp_Image_2024-05-20_at_16.39.07__1_-removebg-preview.png" id="2_nnhmk"]
+
+[sub_resource type="GDScript" id="GDScript_36h5u"]
+script/source = "extends CharacterBody2D
+@onready var musuh = $\"../Enemy\"
+var speed = 200
+@onready var animated_sprite = $AnimatedSprite2D
+
+func _physics_process(delta):
+	#var velocity = Vect%GameManageror2()
+	var velocity = Vector2.ZERO
+
+	if Input.is_action_just_pressed(\"skill\") && self.visible == true :
+		self.visible = false
+		if self.visible == false:
+			musuh.set_physics_process(false);
+			#musuh._on_timer_timeout(false);
+	else :
+		if Input.is_action_just_pressed(\"skill\") && self.visible == false :
+			self.visible = true
+			musuh.set_physics_process(true);
+	if Input.is_action_pressed(\"ui_right\"):
+		velocity.x = 1
+		animated_sprite.flip_h = false # Menghadap ke kanan
+	if Input.is_action_pressed(\"ui_left\"):
+		velocity.x = -1
+		animated_sprite.flip_h = true # Menghadap ke kiri
+	if Input.is_action_pressed(\"ui_down\"):
+		velocity.y = 1
+	if Input.is_action_pressed(\"ui_up\"):
+		velocity.y = -1
+	#velocity = velocity.normalized()
+	velocity = velocity * speed
+	move_and_slide()
+	velocity = velocity.normalized()
+func increase_speed(amount) :
+	speed += 100;
+	$AudioStreamPlayer2D.play()
+func decrease_speed(amount):
+	speed -= 100;
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3igmv"]
+atlas = ExtResource("1_lq6cn")
+region = Rect2(0, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvxxc"]
+atlas = ExtResource("2_nnhmk")
+region = Rect2(0, 0, 500, 500)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6eaxp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3igmv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pvxxc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ib2mn"]
+radius = 15.0
+
+[node name="Player" type="CharacterBody2D"]
+script = SubResource("GDScript_36h5u")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(32.4388, 32.4205)
+scale = Vector2(0.126245, 0.126318)
+sprite_frames = SubResource("SpriteFrames_6eaxp")
+autoplay = "default"
+frame_progress = 0.262316
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(32, 32)
+scale = Vector2(1.74805, 1.74902)
+shape = SubResource("CircleShape2D_ib2mn")

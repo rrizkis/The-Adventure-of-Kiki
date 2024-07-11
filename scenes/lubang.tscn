@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcrwjxstntq4t"]
+
+[ext_resource type="Script" path="res://scenes/lubang.gd" id="1_jbonl"]
+[ext_resource type="Texture2D" uid="uid://bvn500vg1ojub" path="res://assets/Lubang.png" id="1_my47m"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_edwog"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_my47m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yesny"]
+radius = 16.0
+
+[node name="lubang" type="Area2D"]
+script = ExtResource("1_jbonl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(32, 32)
+scale = Vector2(0.0625, 0.0625)
+sprite_frames = SubResource("SpriteFrames_edwog")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(32, 40)
+shape = SubResource("CircleShape2D_yesny")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

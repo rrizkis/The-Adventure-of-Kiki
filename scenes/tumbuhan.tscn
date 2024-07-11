@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://bi5x8f5ar2vjj"]
+
+[ext_resource type="Texture2D" uid="uid://muftdjye45f" path="res://assets/tumbuhan1.png" id="1_mqco8"]
+[ext_resource type="Script" path="res://scenes/tumbuhan.gd" id="1_r7352"]
+[ext_resource type="Texture2D" uid="uid://7irmnfgts4yb" path="res://assets/tumbuhan2.png" id="2_2a00w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fwwxo"]
+size = Vector2(50, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8asr0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_mqco8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_2a00w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="tumbuhan" type="Area2D"]
+script = ExtResource("1_r7352")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(31, 29)
+shape = SubResource("RectangleShape2D_fwwxo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(32, 32)
+scale = Vector2(0.188623, 0.207641)
+sprite_frames = SubResource("SpriteFrames_8asr0")
+autoplay = "default"
+frame = 1
+frame_progress = 0.774484
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
