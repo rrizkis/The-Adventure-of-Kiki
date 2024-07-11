@@ -1,0 +1,86 @@
+[gd_scene load_steps=10 format=3 uid="uid://b6oewtb027gn6"]
+
+[ext_resource type="Script" path="res://MainMenu.gd" id="1_5pux4"]
+[ext_resource type="Texture2D" uid="uid://cch0m0ns84y6e" path="res://asset/background.png" id="1_p5085"]
+[ext_resource type="Texture2D" uid="uid://blkwrn5cohuhj" path="res://asset/cat.png" id="2_xthk3"]
+[ext_resource type="Texture2D" uid="uid://ysllumeufwiw" path="res://asset/mouse.png" id="3_took0"]
+[ext_resource type="Texture2D" uid="uid://c6dkl57ia0gih" path="res://asset/icon play.png" id="4_flcl5"]
+[ext_resource type="Texture2D" uid="uid://8i1m6u7v5odj" path="res://asset/settings.png" id="5_qdj52"]
+[ext_resource type="Texture2D" uid="uid://bwbahjjmeoxfp" path="res://asset/exit.png" id="6_mnew1"]
+[ext_resource type="Texture2D" uid="uid://bstodsuxs3v87" path="res://asset/Font menu.png" id="7_3ma7c"]
+[ext_resource type="Texture2D" uid="uid://buj2qtvx1lru6" path="res://asset/bar.png" id="8_r8d01"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_5pux4")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_p5085")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 460.0
+offset_top = 684.0
+offset_right = 708.0
+offset_bottom = 985.0
+texture = ExtResource("2_xthk3")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1475.0
+offset_top = 773.0
+offset_right = 1789.0
+offset_bottom = 994.0
+texture = ExtResource("3_took0")
+expand_mode = 1
+
+[node name="ButtonPlay" type="Button" parent="."]
+layout_mode = 0
+offset_left = 802.0
+offset_top = 519.0
+offset_right = 1096.0
+offset_bottom = 813.0
+icon = ExtResource("4_flcl5")
+flat = true
+
+[node name="ButtonSettings" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1702.0
+offset_right = 1893.0
+offset_bottom = 200.0
+icon = ExtResource("5_qdj52")
+flat = true
+
+[node name="ButtonExit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 920.0
+offset_right = 142.0
+offset_bottom = 1055.0
+icon = ExtResource("6_mnew1")
+flat = true
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 503.0
+offset_top = 65.0
+offset_right = 1451.0
+offset_bottom = 497.0
+texture = ExtResource("7_3ma7c")
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 285.0
+offset_top = 993.0
+offset_right = 1915.0
+offset_bottom = 1079.0
+texture = ExtResource("8_r8d01")
+
+[connection signal="pressed" from="ButtonPlay" to="." method="_on_button_play_pressed"]
+[connection signal="pressed" from="ButtonSettings" to="." method="_on_button_settings_pressed"]
+[connection signal="pressed" from="ButtonExit" to="." method="_on_button_exit_pressed"]
