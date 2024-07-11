@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2aigqnbian1d"]
+
+[ext_resource type="AudioStream" uid="uid://2glw463gkig4" path="res://music/BacksoundHomeGame.mp3" id="1_y4lse"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_y4lse")
+autoplay = true

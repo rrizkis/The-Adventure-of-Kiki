@@ -1,0 +1,550 @@
+[gd_scene load_steps=31 format=3 uid="uid://bdo3b2h5vtt0x"]
+
+[ext_resource type="Texture2D" uid="uid://b04xdbj7svq8x" path="res://asset/Kucing hitam1.png" id="1_8og00"]
+[ext_resource type="Texture2D" uid="uid://6noqnd1oj400" path="res://asset/Kucing hitam2.png" id="2_0qcq3"]
+[ext_resource type="Texture2D" uid="uid://d3nlqwhs1nio0" path="res://asset/Kucing coklat1.png" id="3_e2hqi"]
+[ext_resource type="Texture2D" uid="uid://dfgiphfux4t7p" path="res://asset/Kucing coklat2.png" id="4_kxc2b"]
+[ext_resource type="Texture2D" uid="uid://2s2yxgidjq1j" path="res://asset/Kucing putih1.png" id="5_qxwtq"]
+[ext_resource type="Texture2D" uid="uid://b6awc1djmtvs2" path="res://asset/Kucing putih2.png" id="6_02h3c"]
+[ext_resource type="Texture2D" uid="uid://bln4ctsevrfht" path="res://asset/Lubang.png" id="7_pgv4e"]
+[ext_resource type="Texture2D" uid="uid://kfwr2bi3ay01" path="res://asset/TembokDuri1.png" id="8_qbnn4"]
+[ext_resource type="Texture2D" uid="uid://da8smbs3aju1b" path="res://asset/TembokDuri2.png" id="9_mqkcj"]
+[ext_resource type="Texture2D" uid="uid://uqi0djmptvtw" path="res://asset/TembokDuri3.png" id="10_02u4e"]
+[ext_resource type="Texture2D" uid="uid://g6sjxrrljown" path="res://asset/TembokDuri4.png" id="11_irruu"]
+[ext_resource type="Texture2D" uid="uid://ck1q7qqdvc2s0" path="res://asset/TembokDuri5.png" id="12_fpsnf"]
+[ext_resource type="Texture2D" uid="uid://8fviu01obd7o" path="res://asset/TembokDuri6.png" id="13_15x6o"]
+[ext_resource type="Texture2D" uid="uid://cpqp6icirvfnm" path="res://asset/TembokDuri7.png" id="14_chv2t"]
+[ext_resource type="Texture2D" uid="uid://muftdjye45f" path="res://assets/tumbuhan1.png" id="15_0oa4o"]
+[ext_resource type="Texture2D" uid="uid://btg7anovcydvb" path="res://asset/InvisibleCoat1.png" id="15_dfxjp"]
+[ext_resource type="Texture2D" uid="uid://qecdrjlhq5qi" path="res://asset/Keju.png" id="15_h3lw3"]
+[ext_resource type="Texture2D" uid="uid://qh7gydr0ciep" path="res://asset/InvisibleCoat2.png" id="16_6hudm"]
+[ext_resource type="Texture2D" uid="uid://7irmnfgts4yb" path="res://assets/tumbuhan2.png" id="16_6slbg"]
+[ext_resource type="Texture2D" uid="uid://3ktqwfi572h0" path="res://asset/PanahSpeed1.png" id="18_h51dx"]
+[ext_resource type="Texture2D" uid="uid://o4om57xgceyx" path="res://asset/PanahSpeed2.png" id="19_5ihc8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_011qq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8og00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_0qcq3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5c2aa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_e2hqi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kxc2b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g68xn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_qxwtq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_02h3c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a54q5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_pgv4e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7lxp3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_qbnn4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_mqkcj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_02u4e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_irruu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_fpsnf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_15x6o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_chv2t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tjqyy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_0oa4o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_6slbg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i86yx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_h3lw3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_43isi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_dfxjp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_6hudm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vml5u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_h51dx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_5ihc8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Info_Tab_Container" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 254.0
+offset_top = 50.0
+offset_right = -263.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/side_margin = -7
+tab_alignment = 1
+
+[node name="Control" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.497396
+anchor_top = 0.183642
+anchor_right = 0.697194
+anchor_bottom = 0.262123
+offset_left = 3.15363
+offset_top = -47.7608
+offset_right = 38.2816
+offset_bottom = -47.6168
+theme_override_font_sizes/font_size = 20
+text = "Bergerak ke atas"
+
+[node name="Label2" type="Label" parent="TabContainer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.308642
+anchor_right = 0.699799
+anchor_bottom = 0.387123
+offset_left = 3.5
+offset_top = -27.1358
+offset_right = 29.6279
+offset_bottom = -26.9918
+theme_override_font_sizes/font_size = 20
+text = "Bergerak ke kiri"
+
+[node name="Label3" type="Label" parent="TabContainer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49566
+anchor_top = 0.436728
+anchor_right = 0.695458
+anchor_bottom = 0.51521
+offset_left = 2.25607
+offset_top = -1.95216
+offset_right = 61.384
+offset_bottom = -1.80817
+theme_override_font_sizes/font_size = 20
+text = "Bergerak ke bawah"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label4" type="Label" parent="TabContainer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.496528
+anchor_top = 0.561728
+anchor_right = 0.696326
+anchor_bottom = 0.64021
+offset_left = 2.70486
+offset_top = 20.6728
+offset_right = 57.8328
+offset_bottom = 20.8168
+theme_override_font_sizes/font_size = 20
+text = "Bergerak ke kanan"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label5" type="Label" parent="TabContainer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.705247
+anchor_right = 0.699799
+anchor_bottom = 0.783728
+offset_left = 4.5
+offset_top = 46.6497
+offset_right = 65.6279
+offset_bottom = 46.7937
+theme_override_font_sizes/font_size = 20
+text = "Menggunakan Item"
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Control/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Control/MarginContainer/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 128
+
+[node name="Button" type="Button" parent="TabContainer/Control"]
+layout_mode = 2
+offset_left = 115.0
+offset_top = 38.0
+offset_right = 147.0
+offset_bottom = 81.0
+theme_override_font_sizes/font_size = 25
+action_mode = 0
+text = "W"
+expand_icon = true
+
+[node name="Button2" type="Button" parent="TabContainer/Control"]
+layout_mode = 2
+offset_left = 117.0
+offset_top = 112.0
+offset_right = 149.0
+offset_bottom = 155.0
+theme_override_font_sizes/font_size = 25
+action_mode = 0
+text = "A"
+expand_icon = true
+
+[node name="Button3" type="Button" parent="TabContainer/Control"]
+layout_mode = 2
+offset_left = 117.0
+offset_top = 200.0
+offset_right = 149.0
+offset_bottom = 243.0
+theme_override_font_sizes/font_size = 25
+action_mode = 0
+text = "S"
+expand_icon = true
+
+[node name="Button4" type="Button" parent="TabContainer/Control"]
+layout_mode = 2
+offset_left = 117.0
+offset_top = 283.0
+offset_right = 149.0
+offset_bottom = 326.0
+theme_override_font_sizes/font_size = 25
+action_mode = 0
+text = "D"
+expand_icon = true
+
+[node name="Button5" type="Button" parent="TabContainer/Control"]
+layout_mode = 2
+offset_left = 116.0
+offset_top = 374.0
+offset_right = 202.0
+offset_bottom = 417.0
+theme_override_font_sizes/font_size = 25
+action_mode = 0
+text = "ENTER"
+expand_icon = true
+
+[node name="Enemies" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Enemies"]
+layout_mode = 2
+offset_left = 341.0
+offset_top = 68.0
+offset_right = 458.0
+offset_bottom = 91.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+text = "KUCING HITAM"
+
+[node name="Label2" type="Label" parent="TabContainer/Enemies"]
+layout_mode = 2
+offset_left = 341.0
+offset_top = 228.0
+offset_right = 458.0
+offset_bottom = 251.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+text = "KUCING OREN"
+
+[node name="Label3" type="Label" parent="TabContainer/Enemies"]
+layout_mode = 2
+offset_left = 342.0
+offset_top = 372.0
+offset_right = 459.0
+offset_bottom = 395.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+text = "KUCING PUTIH"
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Enemies"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Enemies/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Enemies/MarginContainer/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="AnimatedSpriteHitam" type="AnimatedSprite2D" parent="TabContainer/Enemies/MarginContainer/ScrollContainer/VBoxContainer"]
+position = Vector2(91, 77)
+scale = Vector2(0.263916, 0.269775)
+sprite_frames = SubResource("SpriteFrames_011qq")
+autoplay = "default"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TabContainer/Enemies/MarginContainer/ScrollContainer/VBoxContainer"]
+position = Vector2(90, 222)
+scale = Vector2(0.250977, 0.250977)
+sprite_frames = SubResource("SpriteFrames_5c2aa")
+autoplay = "default"
+frame_progress = 0.885216
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="TabContainer/Enemies/MarginContainer/ScrollContainer/VBoxContainer"]
+position = Vector2(88, 369)
+scale = Vector2(0.259766, 0.259766)
+sprite_frames = SubResource("SpriteFrames_g68xn")
+autoplay = "default"
+
+[node name="Obstacle" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Obstacle"]
+layout_mode = 0
+offset_left = 341.0
+offset_top = 68.0
+offset_right = 458.0
+offset_bottom = 96.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+text = "LUBANG"
+
+[node name="Label2" type="Label" parent="TabContainer/Obstacle"]
+layout_mode = 0
+offset_left = 341.0
+offset_top = 228.0
+offset_right = 515.0
+offset_bottom = 256.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+text = "TEMBOK BERDURI"
+
+[node name="Label3" type="Label" parent="TabContainer/Obstacle"]
+layout_mode = 0
+offset_left = 343.0
+offset_top = 386.0
+offset_right = 547.0
+offset_bottom = 414.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+text = "TUMBUHAN RAMBAT"
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Obstacle"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Obstacle/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Obstacle/MarginContainer/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 128
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TabContainer/Obstacle/MarginContainer/ScrollContainer/VBoxContainer"]
+position = Vector2(122, 51)
+scale = Vector2(0.139038, 0.139038)
+sprite_frames = SubResource("SpriteFrames_a54q5")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="TabContainer/Obstacle/MarginContainer/ScrollContainer/VBoxContainer"]
+position = Vector2(122.75, 224.362)
+scale = Vector2(0.219727, 0.217336)
+sprite_frames = SubResource("SpriteFrames_7lxp3")
+autoplay = "default"
+frame_progress = 0.0418251
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="TabContainer/Obstacle/MarginContainer/ScrollContainer/VBoxContainer"]
+position = Vector2(120, 382)
+scale = Vector2(0.416424, 0.416424)
+sprite_frames = SubResource("SpriteFrames_tjqyy")
+autoplay = "default"
+frame_progress = 0.730972
+
+[node name="item" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/item"]
+layout_mode = 0
+offset_left = 341.0
+offset_top = 68.0
+offset_right = 458.0
+offset_bottom = 96.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+text = "KEJU"
+
+[node name="Label2" type="Label" parent="TabContainer/item"]
+layout_mode = 0
+offset_left = 341.0
+offset_top = 228.0
+offset_right = 515.0
+offset_bottom = 256.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+text = "INVISIBLE
+"
+
+[node name="Label3" type="Label" parent="TabContainer/item"]
+layout_mode = 0
+offset_left = 353.0
+offset_top = 375.0
+offset_right = 414.0
+offset_bottom = 403.0
+theme_override_font_sizes/font_size = 20
+text = "SPEED"
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/item"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/item/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/item/MarginContainer/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 128
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TabContainer/item/MarginContainer/ScrollContainer/VBoxContainer"]
+position = Vector2(120, 67)
+scale = Vector2(0.293945, 0.293945)
+sprite_frames = SubResource("SpriteFrames_i86yx")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="TabContainer/item/MarginContainer/ScrollContainer/VBoxContainer"]
+position = Vector2(103, 201)
+scale = Vector2(0.288208, 0.288208)
+sprite_frames = SubResource("SpriteFrames_43isi")
+autoplay = "default"
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="TabContainer/item/MarginContainer/ScrollContainer/VBoxContainer"]
+position = Vector2(118, 362)
+scale = Vector2(0.337891, 0.337891)
+sprite_frames = SubResource("SpriteFrames_vml5u")
+autoplay = "default"

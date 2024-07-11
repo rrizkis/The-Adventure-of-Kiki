@@ -1,0 +1,123 @@
+[gd_scene load_steps=12 format=3 uid="uid://bh6w7c2bisd41"]
+
+[ext_resource type="FontFile" uid="uid://4gig0go1nqyd" path="res://fonts/Bangers-Regular.ttf" id="1_0euhd"]
+[ext_resource type="Texture2D" uid="uid://cch0m0ns84y6e" path="res://asset/background.png" id="1_lic3i"]
+[ext_resource type="Texture2D" uid="uid://bwcgo67i21edo" path="res://asset/reload.png" id="2_hua1y"]
+[ext_resource type="Texture2D" uid="uid://div1gwqbnr5f0" path="res://asset/arrow.png" id="3_aw0ii"]
+[ext_resource type="Script" path="res://ButtonRetry.gd" id="3_oadhy"]
+[ext_resource type="Texture2D" uid="uid://ccj02wowcga8q" path="res://asset/WhatsApp_Image_2024-05-20_at_16.39.07-removebg-preview.png" id="4_7igmb"]
+[ext_resource type="Texture2D" uid="uid://diqirwvqittco" path="res://asset/WhatsApp_Image_2024-05-20_at_16.39.07__1_-removebg-preview.png" id="5_n1px7"]
+[ext_resource type="Texture2D" uid="uid://d37qugbs0kb4f" path="res://asset/Pintu.png" id="6_0w5h5"]
+[ext_resource type="Texture2D" uid="uid://qecdrjlhq5qi" path="res://asset/Keju.png" id="7_wo1pi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2r8pr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_7igmb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_n1px7")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_w64vf"]
+
+[node name="Victory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 186.0
+offset_top = 101.0
+offset_right = -185.0
+offset_bottom = -108.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_lic3i")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Panel/ColorRect"]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 42.0
+offset_right = 511.0
+offset_bottom = 100.0
+theme_override_fonts/font = ExtResource("1_0euhd")
+theme_override_font_sizes/font_size = 50
+text = "VICTORY"
+horizontal_alignment = 1
+
+[node name="ButtonRetry" type="Button" parent="Panel/ColorRect"]
+layout_mode = 0
+offset_left = 262.0
+offset_top = 232.0
+offset_right = 356.0
+offset_bottom = 330.0
+action_mode = 0
+icon = ExtResource("2_hua1y")
+flat = true
+expand_icon = true
+script = ExtResource("3_oadhy")
+
+[node name="ButtonExit" type="Button" parent="Panel/ColorRect"]
+layout_mode = 0
+offset_left = 513.0
+offset_top = 332.0
+offset_right = 617.0
+offset_bottom = 434.0
+rotation = -3.14441
+action_mode = 0
+icon = ExtResource("3_aw0ii")
+flat = true
+expand_icon = true
+
+[node name="AnimatedSpriteKiki" type="AnimatedSprite2D" parent="Panel/ColorRect"]
+position = Vector2(198, 390)
+rotation = -0.0946147
+scale = Vector2(0.251257, 0.251257)
+sprite_frames = SubResource("SpriteFrames_2r8pr")
+animation = &"new_animation"
+autoplay = "new_animation"
+script = SubResource("GDScript_w64vf")
+
+[node name="TextureRect" type="TextureRect" parent="Panel/ColorRect"]
+layout_mode = 0
+offset_left = -19.0
+offset_top = 333.0
+offset_right = 102.0
+offset_bottom = 454.0
+texture = ExtResource("6_0w5h5")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Panel/ColorRect"]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 373.0
+offset_right = 202.0
+offset_bottom = 451.0
+rotation = -0.112494
+texture = ExtResource("7_wo1pi")
+expand_mode = 1
+
+[connection signal="pressed" from="Panel/ColorRect/ButtonRetry" to="Panel/ColorRect/ButtonRetry" method="_on_pressed"]
+[connection signal="pressed" from="Panel/ColorRect/ButtonExit" to="Panel/ColorRect/ButtonRetry" method="_on_button_exit_pressed"]

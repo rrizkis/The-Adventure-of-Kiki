@@ -1,0 +1,150 @@
+[gd_scene load_steps=16 format=3 uid="uid://b8g55mg3b8lg5"]
+
+[ext_resource type="Script" path="res://GameOver.gd" id="1_cwfho"]
+[ext_resource type="Texture2D" uid="uid://bwcgo67i21edo" path="res://asset/reload.png" id="1_j45s3"]
+[ext_resource type="FontFile" uid="uid://4gig0go1nqyd" path="res://fonts/Bangers-Regular.ttf" id="1_nitpy"]
+[ext_resource type="Texture2D" uid="uid://boxixdtf6bx31" path="res://asset/remove.png" id="2_8eaq5"]
+[ext_resource type="Texture2D" uid="uid://cch0m0ns84y6e" path="res://asset/background.png" id="2_o8vjx"]
+[ext_resource type="Texture2D" uid="uid://ccj02wowcga8q" path="res://asset/WhatsApp_Image_2024-05-20_at_16.39.07-removebg-preview.png" id="3_onvmj"]
+[ext_resource type="Script" path="res://ButtonRetry.gd" id="3_rktju"]
+[ext_resource type="Texture2D" uid="uid://diqirwvqittco" path="res://asset/WhatsApp_Image_2024-05-20_at_16.39.07__1_-removebg-preview.png" id="4_6emav"]
+[ext_resource type="Script" path="res://ButtonExit.gd" id="5_c3tpo"]
+[ext_resource type="Texture2D" uid="uid://b04xdbj7svq8x" path="res://asset/Kucing hitam1.png" id="5_vgx6k"]
+[ext_resource type="Texture2D" uid="uid://6noqnd1oj400" path="res://asset/Kucing hitam2.png" id="6_loocv"]
+[ext_resource type="Texture2D" uid="uid://b3fdcutc6yfvj" path="res://asset/game-over.png" id="8_rinq7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tfb7n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_onvmj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6emav")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_j0w7t"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4481u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_vgx6k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_loocv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cwfho")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 115.0
+offset_right = 953.0
+offset_bottom = 555.0
+texture = ExtResource("2_o8vjx")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Panel/TextureRect"]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 42.0
+offset_right = 511.0
+offset_bottom = 100.0
+theme_override_fonts/font = ExtResource("1_nitpy")
+theme_override_font_sizes/font_size = 50
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="ButtonRetry" type="Button" parent="Panel/TextureRect"]
+layout_mode = 0
+offset_left = 265.0
+offset_top = 240.0
+offset_right = 367.0
+offset_bottom = 346.0
+action_mode = 0
+icon = ExtResource("1_j45s3")
+flat = true
+expand_icon = true
+script = ExtResource("3_rktju")
+
+[node name="ButtonExit" type="Button" parent="Panel/TextureRect"]
+layout_mode = 0
+offset_left = 420.0
+offset_top = 244.0
+offset_right = 518.0
+offset_bottom = 342.0
+action_mode = 0
+icon = ExtResource("2_8eaq5")
+flat = true
+expand_icon = true
+script = ExtResource("5_c3tpo")
+
+[node name="AnimatedSpriteKiki" type="AnimatedSprite2D" parent="Panel/TextureRect"]
+position = Vector2(678, 391)
+rotation = 1.92473
+scale = Vector2(0.251257, 0.251257)
+sprite_frames = SubResource("SpriteFrames_tfb7n")
+animation = &"new_animation"
+autoplay = "new_animation"
+script = SubResource("GDScript_j0w7t")
+
+[node name="AnimatedSpriteHitam" type="AnimatedSprite2D" parent="Panel/TextureRect"]
+position = Vector2(124, 385)
+scale = Vector2(0.365723, 0.365723)
+sprite_frames = SubResource("SpriteFrames_4481u")
+autoplay = "default"
+
+[node name="TextureRect" type="TextureRect" parent="Panel/TextureRect"]
+layout_mode = 0
+offset_left = 694.0
+offset_top = 340.0
+offset_right = 712.0
+offset_bottom = 358.0
+texture = ExtResource("8_rinq7")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Panel/TextureRect"]
+layout_mode = 0
+offset_left = 718.0
+offset_top = 335.0
+offset_right = 736.0
+offset_bottom = 353.0
+texture = ExtResource("8_rinq7")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="Panel/TextureRect"]
+layout_mode = 0
+offset_left = 724.0
+offset_top = 357.0
+offset_right = 742.0
+offset_bottom = 375.0
+texture = ExtResource("8_rinq7")
+expand_mode = 1
+
+[connection signal="pressed" from="Panel/TextureRect/ButtonRetry" to="Panel/TextureRect/ButtonRetry" method="_on_pressed"]
+[connection signal="pressed" from="Panel/TextureRect/ButtonExit" to="." method="_on_button_exit_pressed"]

@@ -1,0 +1,140 @@
+[gd_scene load_steps=17 format=3 uid="uid://b6oewtb027gn6"]
+
+[ext_resource type="Script" path="res://MainMenu.gd" id="1_5pux4"]
+[ext_resource type="Texture2D" uid="uid://cch0m0ns84y6e" path="res://asset/background.png" id="1_p5085"]
+[ext_resource type="Texture2D" uid="uid://c6dkl57ia0gih" path="res://asset/icon play.png" id="4_flcl5"]
+[ext_resource type="Texture2D" uid="uid://d37qugbs0kb4f" path="res://asset/Pintu.png" id="5_e0fhb"]
+[ext_resource type="Texture2D" uid="uid://8i1m6u7v5odj" path="res://asset/settings.png" id="5_qdj52"]
+[ext_resource type="Texture2D" uid="uid://bstodsuxs3v87" path="res://asset/Font menu.png" id="7_3ma7c"]
+[ext_resource type="Texture2D" uid="uid://buj2qtvx1lru6" path="res://asset/bar.png" id="8_r8d01"]
+[ext_resource type="Texture2D" uid="uid://ccj02wowcga8q" path="res://asset/WhatsApp_Image_2024-05-20_at_16.39.07-removebg-preview.png" id="9_dyoyw"]
+[ext_resource type="Texture2D" uid="uid://b04xdbj7svq8x" path="res://asset/Kucing hitam1.png" id="10_bcbhm"]
+[ext_resource type="Texture2D" uid="uid://diqirwvqittco" path="res://asset/WhatsApp_Image_2024-05-20_at_16.39.07__1_-removebg-preview.png" id="10_tvpmb"]
+[ext_resource type="Texture2D" uid="uid://6noqnd1oj400" path="res://asset/Kucing hitam2.png" id="11_67nfl"]
+[ext_resource type="Texture2D" uid="uid://b8ur7cntbrplq" path="res://asset/info.png" id="12_yscfs"]
+[ext_resource type="Script" path="res://ButtonInfo.gd" id="13_8o555"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xs0bl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_dyoyw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_tvpmb")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_ihrnh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_btacv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_bcbhm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_67nfl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_5pux4")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1157.0
+offset_bottom = 651.0
+texture = ExtResource("1_p5085")
+expand_mode = 1
+
+[node name="ButtonPlay" type="Button" parent="."]
+layout_mode = 0
+offset_left = 501.0
+offset_top = 287.0
+offset_right = 654.0
+offset_bottom = 440.0
+action_mode = 0
+icon = ExtResource("4_flcl5")
+flat = true
+expand_icon = true
+
+[node name="ButtonSettings" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1055.0
+offset_top = 8.0
+offset_right = 1147.0
+offset_bottom = 104.0
+action_mode = 0
+icon = ExtResource("5_qdj52")
+flat = true
+expand_icon = true
+
+[node name="ButtonExit" type="Button" parent="."]
+layout_mode = 0
+offset_left = -31.0
+offset_top = 478.0
+offset_right = 151.0
+offset_bottom = 693.0
+action_mode = 0
+icon = ExtResource("5_e0fhb")
+flat = true
+expand_icon = true
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 348.0
+offset_top = 46.0
+offset_right = 813.0
+offset_bottom = 258.0
+texture = ExtResource("7_3ma7c")
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 612.0
+offset_right = 1157.0
+offset_bottom = 653.0
+texture = ExtResource("8_r8d01")
+expand_mode = 1
+
+[node name="AnimatedSpriteKiki" type="AnimatedSprite2D" parent="."]
+position = Vector2(1048, 564)
+scale = Vector2(0.277063, 0.277063)
+sprite_frames = SubResource("SpriteFrames_xs0bl")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.178579
+script = SubResource("GDScript_ihrnh")
+
+[node name="AnimatedSpriteHitam" type="AnimatedSprite2D" parent="."]
+position = Vector2(306, 552)
+scale = Vector2(0.446289, 0.446289)
+sprite_frames = SubResource("SpriteFrames_btacv")
+autoplay = "default"
+frame_progress = 0.750736
+
+[node name="ButtonInfo" type="Button" parent="."]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 12.0
+offset_right = 100.0
+offset_bottom = 99.0
+action_mode = 0
+icon = ExtResource("12_yscfs")
+flat = true
+expand_icon = true
+script = ExtResource("13_8o555")
+
+[connection signal="pressed" from="ButtonPlay" to="." method="_on_button_play_pressed"]
+[connection signal="pressed" from="ButtonSettings" to="." method="_on_button_settings_pressed"]
+[connection signal="pressed" from="ButtonExit" to="." method="_on_button_exit_pressed"]
+[connection signal="pressed" from="ButtonInfo" to="." method="_on_button_info_pressed"]
